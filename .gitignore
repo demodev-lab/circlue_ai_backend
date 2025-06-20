@@ -131,7 +131,7 @@ celerybeat.pid
 # Environments
 .env
 .envrc
-.venv
+.venv/
 env/
 venv/
 ENV/
@@ -199,3 +199,22 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# misc
+.DS_Store
+
+# vscode
+.vscode/
+
+# Git related
+*.patch
+*.log
+
+# Miscellaneous files
+*.db
+*.sqlite3
+*.bin
+
+# other
+.note/
+.cursor/mcp.json

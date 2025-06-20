@@ -8,6 +8,45 @@ dependencies = [
     "django>=5.2.3",
     "django-filter>=25.1",
     "djangorestframework>=3.16.0",
+    "drf-spectacular>=0.28.0",
     "markdown>=3.8.2",
+    "pre-commit>=4.2.0",
     "pygments>=2.19.1",
 ]
+
+[tool.black]
+target-version = ['py313']
+line-length = 100
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+| \.hg
+| \.mypy_cache
+| \.tox
+| \.venv
+| _build
+| buck-out
+| build
+)/
+'''
+preview = true
+
+[tool.isort]
+py_version = 313
+line_length = 100
+atomic = true
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+known_first_party = []
+known_third_party = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+addopts = "-v --tb=short"
+pythonpath = ["."]
